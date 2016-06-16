@@ -1,0 +1,52 @@
+# app/config/security.yml
+#security:
+#    providers:
+#        in_memory:
+#            memory:
+#                users:
+#                    ryan:
+#                        password: 123
+#                        roles: 'ROLE_USER'
+#                    admin:
+#                        password: 456
+#                        roles: 'ROLE_ADMIN'
+
+security:
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+
+    providers:
+            our_db_provider:
+                entity:
+                    class: AppBundle:User
+                    property: username
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        default:
+            anonymous: ~
+            http_basic: ~
+            logout:
+                path:   /logout
+                target: /
+
+        main:
+            pattern:    ^/
+            http_basic: ~
+            provider: our_db_provider
+
+            guard:
+                    authenticators:
+                    - app.token_authenticator
+
+    #access_control:
+            # require ROLE_ADMIN for /admin*
+    #        - { path: ^/admin, roles: ROLE_ADMIN }
+    #        - { path: ^/user, roles: ROLE_USER }
+
+    encoders:
+            Symfony\Component\Security\Core\User\User: plaintext

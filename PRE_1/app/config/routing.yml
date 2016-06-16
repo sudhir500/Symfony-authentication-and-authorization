@@ -1,0 +1,12 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+logout:
+    path: /logout
+
+sudhir:
+    path: /sudhir
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
