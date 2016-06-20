@@ -1,5 +1,6 @@
 # Symfony 2.8 -authentication-and-authorization  
-Simple Login / logout with Register and edit profile using  FOSUserBundle
+
+# Simple Login / logout with Register and edit profile using  FOSUserBundle
 
 -----------------------------------------
 testing purpose only for KNP Labs
