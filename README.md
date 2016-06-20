@@ -2,10 +2,10 @@
 
 # Simple Login / logout with Register and edit profile using  FOSUserBundle
 
------------------------------------------
+
 testing purpose only for KNP Labs
 Folder PRE1_1 as using FOSUserBunlde 
 Folder PRE_2 as form_login_authenticator
--------------------------------------------
+
 
 Working copy is PRE_5
